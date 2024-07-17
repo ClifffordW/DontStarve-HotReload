@@ -1,7 +1,6 @@
 local skipanimation = GetModConfigData("skipanim")
 
-local hotreloadicon
-
+local hotreloadicon, hotreloadicon_shadow
 
 _G.staticScheduler:ExecuteInTime(0, function()
 	if _G.TheFrontEnd and not hotreload_text then
@@ -29,13 +28,14 @@ _G.staticScheduler:ExecuteInTime(0, function()
 		local hotreloadtext = hotreload_lang[LOC.GetLocaleCode()] or hotreload_lang.en
 
 		local ingame = _G.InGamePlay()
+		local icon = jit and "HotReload_On.tex" or "HotReload_Off.tex"
 
-		hotreloadicon = _G.TheFrontEnd.overlayroot:AddChild(Image("images/hot_reload.xml", "HotReload_Whaskal.tex"))
+		hotreloadicon = _G.TheFrontEnd.overlayroot:AddChild(Image("images/hot_reload.xml", icon))
 		hotreloadicon:SetPosition(1000, 500)
 		hotreloadicon:SetScale(0.15, 0.15)
 		hotreloadicon:Hide()
 
-		local hotreloadicon_shadow = hotreloadicon:AddChild(Image("images/hot_reload.xml", "HotReload_Whaskal.tex"))
+		hotreloadicon_shadow = hotreloadicon:AddChild(Image("images/hot_reload.xml", icon))
 		hotreloadicon_shadow:SetTint(0 / 255, 0 / 255, 0 / 255, 1)
 		hotreloadicon_shadow:SetScale(1.05, 1.05)
 
@@ -96,14 +96,4 @@ _G.staticScheduler:ExecuteInTime(0, function()
 			end)
 		end)
 	end
-
-	if not jit then
-		_G.staticScheduler:ExecuteInTime(0.5, function()
-			hotreloadicon:SetTint(255 / 255, 0 / 255, 0 / 255, 1)
-		end)
-	end
-
-
 end)
-
-

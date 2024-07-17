@@ -104,19 +104,19 @@ if config == true then
 	configuration_options = {
 		{
 
-			{
-				name = "skipanim",
-				label = translate({ en = "Load in Animation", zh = "加载动画" }),
-				hover = translate({
-					en = "Turn off if you want to skip the ingame showing animation",
-					zh = "如果您想跳过游戏内显示动画，请关闭",
-				}),
-				options = {
-					{ description = "On", data = true },
-					{ description = "Off", data = false },
-				},
-				default = true,
+			
+			name = "skipanim",
+			label = translate({ en = "Load in Animation", zh = "加载动画" }),
+			hover = translate({
+				en = "Turn off if you want to skip the ingame showing animation",
+				zh = "如果您想跳过游戏内显示动画，请关闭",
+			}),
+			options = {
+				{ description = "On", data = true },
+				{ description = "Off", data = false },
 			},
+			default = true,
+			
 		},
 	}
 end

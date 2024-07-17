@@ -30,14 +30,11 @@ modimport("init/indicator")
 
 
 
-if not jit  then
-
-	
-	
+if not jit then
 	return
 end
 
-local jit = require 'jit' or nil
+local jit = require("jit") or nil
 
 if not IsWin32() then
 	print("Hot Reload only support window")
