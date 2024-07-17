@@ -106,7 +106,7 @@ if config == true then
 
 			
 			name = "skipanim",
-			label = translate({ en = "Load in Animation", zh = "加载动画" }),
+			label = translate({ en = "Skip Animation", zh = "跳过动画" }),
 			hover = translate({
 				en = "Turn off if you want to skip the ingame showing animation",
 				zh = "如果您想跳过游戏内显示动画，请关闭",
